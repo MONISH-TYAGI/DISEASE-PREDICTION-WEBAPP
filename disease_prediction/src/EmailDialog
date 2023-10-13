@@ -1,0 +1,52 @@
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+
+const EmailDialog = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const sendEmail = () => {
+    // Implement your email sending logic here
+    console.log('Sending email to:', email);
+    closeModal();
+  };
+
+  return (
+    <div>
+      <button onClick={openModal} className="bg-blue-500 text-white p-2 rounded">Open Email Dialog</button>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Email Dialog"
+        className="email-dialog"
+        overlayClassName="email-dialog-overlay"
+      >
+        <h2>Enter Your Email</h2>
+        <input
+          type="email"
+          value={email}
+          onChange={handleEmailChange}
+          placeholder="Your email"
+          className="w-full p-2 rounded"
+        />
+        <button onClick={sendEmail} className="bg-blue-500 text-white p-2 mt-4 rounded">
+          Send Email
+        </button>
+      </Modal>
+    </div>
+  );
+};
+
+export default EmailDialog;
