@@ -8,7 +8,7 @@ function Detection() {
     const [selectedImage, setSelectedImage] = useState("https://cdnph.upi.com/sv/ph/og/i/7111522246276/2018/1/15222482497589/v1.5/Study-links-aggressive-brain-tumors-growth-to-single-gene.jpg");
     const [count,setCount]=useState(0);
     const [fileName,setFileName]=useState("ABC1.jpg");
-    const [percentage,setPercentage]=useState(33);
+    const [percentage,setPercentage]=useState(0);
     const [result,setResult]=useState("Tumor Not Detected");
     const [loading,setLoading]=useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -93,6 +93,7 @@ function Detection() {
         {
           console.log("hello1")
           setResult("Tumor Not Detected");
+          setPercentage(0)
         }else
         {
           console.log("hello2")

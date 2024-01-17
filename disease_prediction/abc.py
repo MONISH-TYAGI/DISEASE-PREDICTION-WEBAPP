@@ -20,6 +20,7 @@ from keras.optimizers import Adam
 input_value = sys.argv[1]
 print(f"Input value: {input_value}")
 
+# model_path = os.path.abspath('./brain_tumor_detector.h5')
 model_path = os.path.abspath('./Tumor_classifier_model.h5')
 
 try:
